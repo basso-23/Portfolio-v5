@@ -13,5 +13,3 @@ export const handleLanguageChange = (router, language) => {
     query: { ...router.query, language: language },
   });
 };
-
-export default { handleThemeChange, handleLanguageChange };
