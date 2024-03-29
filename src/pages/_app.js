@@ -25,7 +25,7 @@ const App = ({ Component, pageProps, router }) => {
 
   //FUNCTION: Se ejecuta cada vez que se actualiza el query de la pagina; Maneja el idioma y el tema
   useEffect(() => {
-    //* Pone el tema por defecto si theme no existe en la URL */
+    //* Pone el tema por defecto si theme NO existe en la URL */
     if (!queryValues.theme) {
       var temaDefault = defaultValues.theme;
       document.documentElement.setAttribute("theme", temaDefault);
@@ -35,7 +35,7 @@ const App = ({ Component, pageProps, router }) => {
       var temaCurrent = queryValues.theme;
       document.documentElement.setAttribute("theme", temaCurrent);
     }
-    //* Pone el idioma por defecto si language no existe en la URL */
+    //* Pone el idioma por defecto si language NO existe en la URL */
     if (!queryValues.language) {
       setLanguageJSON(defaultValues.language === "ES" ? es : en);
     }
