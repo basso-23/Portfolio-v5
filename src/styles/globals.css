@@ -3,8 +3,17 @@
 @tailwind utilities;
 
 :root {
-  background-color: #ffffff;
-  color: #151515;
+  --color: #525252;
+  --background-color: #ffffff;
+  color: var(--color);
+  background-color: var(--background-color);
+}
+
+[theme="dark"] {
+  --color: #ededed;
+  --background-color: rgb(37, 37, 37);
+  color: var(--color);
+  background-color: var(--background-color);
 }
 
 .pageSize {

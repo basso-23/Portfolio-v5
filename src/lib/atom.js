@@ -9,3 +9,5 @@ export const queryOptions = atom({
   theme: undefined,
   language: undefined,
 });
+
+export const languageAtom = atom([]);

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-const Right_side = () => {
+const Content = () => {
   return (
     <main className=" flex-1 bg-lime-400">
       <div> RIGHT</div>
@@ -8,4 +8,4 @@ const Right_side = () => {
   );
 };
 
-export default Right_side;
+export default Content;
