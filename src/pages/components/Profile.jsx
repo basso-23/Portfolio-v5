@@ -1,28 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
+import { handleLanguageChange, handleThemeChange } from "@/lib/routerUtils";
 import { useAtom } from "jotai";
 import { languageAtom } from "@/lib/atom";
 
 const Profile = () => {
-  const [languageJSON, setLanguageJSON] = useAtom(languageAtom);
-
   const router = useRouter();
-
-  // FUNCTION: ACTUALIZA EL TEMA
-  const handleThemeChange = (theme) => {
-    router.push({
-      pathname: router.pathname,
-      query: { ...router.query, theme: theme },
-    });
-  };
-
-  // FUNCTION: ACTUALIZA EL IDIOMA
-  const handleLanguageChange = (language) => {
-    router.push({
-      pathname: router.pathname,
-      query: { ...router.query, language: language },
-    });
-  };
+  const [languageJSON, setLanguageJSON] = useAtom(languageAtom);
 
   return (
     <main>
@@ -37,12 +21,20 @@ const Profile = () => {
           <div>SOCIALS</div>
           <div>BUTTON</div>
           <div className="flex gap-5">
-            <button onClick={() => handleThemeChange("light")}>Light</button>
-            <button onClick={() => handleThemeChange("dark")}>Dark</button>
+            <button onClick={() => handleThemeChange(router, "light")}>
+              Light
+            </button>
+            <button onClick={() => handleThemeChange(router, "dark")}>
+              Dark
+            </button>
           </div>
           <div className="flex gap-5">
-            <button onClick={() => handleLanguageChange("ES")}>ES</button>
-            <button onClick={() => handleLanguageChange("EN")}>EN</button>
+            <button onClick={() => handleLanguageChange(router, "ES")}>
+              ES
+            </button>
+            <button onClick={() => handleLanguageChange(router, "EN")}>
+              EN
+            </button>
           </div>
 
           {languageJSON.map((item, index) => (

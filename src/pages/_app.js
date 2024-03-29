@@ -25,21 +25,21 @@ const App = ({ Component, pageProps, router }) => {
 
   //FUNCTION: Se ejecuta cada vez que se actualiza el query de la pagina; Maneja el idioma y el tema
   useEffect(() => {
-    //* PONE EL TEMA DEFAULT */
+    //* Pone el tema por defecto si theme no existe en la URL */
     if (!queryValues.theme) {
       var temaDefault = defaultValues.theme;
       document.documentElement.setAttribute("theme", temaDefault);
     }
-    //* PONE EL TEMA DE LA URL */
+    //* Pone el tema que indica la URL */
     else {
       var temaCurrent = queryValues.theme;
       document.documentElement.setAttribute("theme", temaCurrent);
     }
-    //* PONE EL IDIOMA DEFAULT */
+    //* Pone el idioma por defecto si language no existe en la URL */
     if (!queryValues.language) {
       setLanguageJSON(defaultValues.language === "ES" ? es : en);
     }
-    //* PONE EL IDIOMA DE LA URL */
+    //* Pone el idioma que indica la URL */
     else {
       setLanguageJSON(queryValues.language === "ES" ? es : en);
     }
