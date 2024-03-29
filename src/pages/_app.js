@@ -3,36 +3,29 @@ import "@fontsource-variable/syne";
 
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
+import { useAtom } from "jotai";
+import { queryOptions } from "@/lib/atom";
 
 const App = ({ Component, pageProps, router }) => {
   const router_ = useRouter();
 
-  const [themeQuery, setThemeQuery] = useState();
-  const [languageQuery, setLanguageQuery] = useState();
+  const [queryValues, setQueryValues] = useAtom(queryOptions);
 
   //FUNCTION: SE EJECUTA CADA VEZ QUE CAMBIA EL QUERY DE LA PAGINA Y GUARDA LOS VALORES EN LAS VARIABLES
   useEffect(() => {
     const { query } = router_;
-    setThemeQuery(query.theme);
-    setLanguageQuery(query.language);
+    setQueryValues({ theme: query.theme, language: query.language });
   }, [router_]);
 
   //FUNCTION: CONSOLE LOG DEL QUERY
   useEffect(() => {
-    console.log("THEME QUERY:", themeQuery);
-    console.log("IDIOMA QUERY:", languageQuery);
-  }, [themeQuery, languageQuery]);
+    console.log("THEME QUERY:", queryValues.theme);
+    console.log("IDIOMA QUERY:", queryValues.language);
+  }, [queryValues]);
 
   return (
     <div style={{ fontFamily: "Syne Variable, sans-serif" }}>
-      <Component
-        key={router.pathname}
-        {...pageProps}
-        themeQuery={themeQuery}
-        setThemeQuery={setThemeQuery}
-        languageQuery={languageQuery}
-        setLanguageQuery={setLanguageQuery}
-      />
+      <Component key={router.pathname} {...pageProps} />
     </div>
   );
 };

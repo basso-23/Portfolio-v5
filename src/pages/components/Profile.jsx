@@ -1,7 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
+import { useAtom } from "jotai";
 
-const Left_side = ({ themeQuery, languageQuery }) => {
+import { defaultOptions } from "@/lib/atom";
+import { queryOptions } from "@/lib/atom";
+
+const Profile = () => {
+  const [defaultValues, setDefaultValues] = useAtom(defaultOptions);
+  const [queryValues, setQueryValues] = useAtom(queryOptions);
+
   const router = useRouter();
 
   //FUNCTION: ACTUALIZA EL TEMA
@@ -32,32 +39,21 @@ const Left_side = ({ themeQuery, languageQuery }) => {
           <div>BASED IN</div>
           <div>SOCIALS</div>
           <div>BUTTON</div>
-
           <div className="flex gap-5">
             <button onClick={() => handleThemeChange("light")}>Light</button>
             <button onClick={() => handleThemeChange("dark")}>Dark </button>
           </div>
-
           <div className="flex gap-5">
             <button onClick={() => handleLanguageChange("ES")}>ES</button>
             <button onClick={() => handleLanguageChange("EN")}>EN</button>
           </div>
 
-          {!languageQuery || languageQuery === "ES" ? (
-            <div>Español</div>
-          ) : (
-            <div>Ingles</div>
-          )}
-
-          {!themeQuery || themeQuery === "light" ? (
-            <div>Light</div>
-          ) : (
-            <div>Dark</div>
-          )}
+          <div className="mt-20 text-xl">{queryValues.theme}</div>
+          <div className="mt-0 text-xl">{queryValues.language}</div>
         </div>
       </section>
     </main>
   );
 };
 
-export default Left_side;
+export default Profile;
