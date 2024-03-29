@@ -13,52 +13,39 @@ import { en } from "@/languages/en";
 
 const App = ({ Component, pageProps, router }) => {
   const router_ = useRouter();
+  const [defaultValues, setDefaultValues] = useAtom(defaultOptions); //* Guarda el idoma y tema por defecto de la pagina */
+  const [queryValues, setQueryValues] = useAtom(queryOptions); //* Guarda los valores del query de la pagina */
+  const [languageJSON, setLanguageJSON] = useAtom(languageAtom); //* Guarda el contenido de la pagina */
 
-  const [queryValues, setQueryValues] = useAtom(queryOptions);
-  const [defaultValues, setDefaultValues] = useAtom(defaultOptions);
-  const [languageJSON, setLanguageJSON] = useAtom(languageAtom);
-
-  //FUNCTION: SE EJECUTA CADA VEZ QUE CAMBIA EL QUERY DE LA PAGINA Y GUARDA LOS VALORES EN LAS VARIABLES
+  //FUNCTION: Se ejecuta cada vez que se actualiza el query de la pagina; Guarda los valores del query en una variable
   useEffect(() => {
     const { query } = router_;
     setQueryValues({ theme: query.theme, language: query.language });
-  }, [router_]);
+  }, [router_, setQueryValues]);
 
-  //FUNCTION: SE EJECUTA CADA VEZ QUE CAMBIA EL QUERY DE LA PAGINA, CONSOLE LOG DEL QUERY
+  //FUNCTION: Se ejecuta cada vez que se actualiza el query de la pagina; Maneja el idioma y el tema
   useEffect(() => {
-    console.log("THEME QUERY:", queryValues.theme);
-    console.log("IDIOMA QUERY:", queryValues.language);
-
-    //* NO EXISTE EL VALOR DEL TEMA EN LA URL, UTILIZA EL TEMA DEFAULT */
+    //* PONE EL TEMA DEFAULT */
     if (!queryValues.theme) {
-      var tema = defaultValues.theme;
-      document.documentElement.setAttribute("theme", tema);
+      var temaDefault = defaultValues.theme;
+      document.documentElement.setAttribute("theme", temaDefault);
     }
-    //* SI EXISTE EL VALOR DEL TEMA EN LA URL, UTILIZA EL TEMA EN LA URL */
+    //* PONE EL TEMA DE LA URL */
     else {
-      var tema = queryValues.theme;
-      document.documentElement.setAttribute("theme", tema);
+      var temaCurrent = queryValues.theme;
+      document.documentElement.setAttribute("theme", temaCurrent);
     }
-
-    //* NO EXISTE EL VALOR DEL IDIOMA EN LA URL, UTILIZA EL IDIOMA DEFAULT */
+    //* PONE EL IDIOMA DEFAULT */
     if (!queryValues.language) {
-      if (defaultValues.language === "ES") {
-        setLanguageJSON(es);
-      }
-      if (defaultValues.language === "EN") {
-        setLanguageJSON(en);
-      }
+      setLanguageJSON(defaultValues.language === "ES" ? es : en);
     }
-    //* SI EXISTE EL VALOR DEL IDIOMA EN LA URL, UTILIZA EL IDIOMA EN LA URL */
+    //* PONE EL IDIOMA DE LA URL */
     else {
-      if (queryValues.language === "ES") {
-        setLanguageJSON(es);
-      }
-      if (queryValues.language === "EN") {
-        setLanguageJSON(en);
-      }
+      setLanguageJSON(queryValues.language === "ES" ? es : en);
     }
-  }, [queryValues]);
+    ////console.log("THEME QUERY:", queryValues.theme);
+    ////console.log("IDIOMA QUERY:", queryValues.language);
+  }, [queryValues, defaultValues, setLanguageJSON]);
 
   return (
     <div style={{ fontFamily: "Syne Variable, sans-serif" }}>

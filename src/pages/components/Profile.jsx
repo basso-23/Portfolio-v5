@@ -1,13 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import { useAtom } from "jotai";
-import { defaultOptions } from "@/lib/atom";
-import { queryOptions } from "@/lib/atom";
 import { languageAtom } from "@/lib/atom";
 
 const Profile = () => {
-  const [queryValues, setQueryValues] = useAtom(queryOptions);
-  const [defaultValues, setDefaultValues] = useAtom(defaultOptions);
   const [languageJSON, setLanguageJSON] = useAtom(languageAtom);
 
   const router = useRouter();
@@ -31,7 +27,7 @@ const Profile = () => {
   return (
     <main>
       {/* //SECTION: PROFILE CONTAINER // */}
-      <section className="w-[400px] h-[100vh] min-h-[700px] max-h-[900px] p-4">
+      <section className="w-[400px] h-[100vh] min-h-[700px]  max-h-[900px] p-4">
         {/* //* CONTENT */}
         <div className="relative w-full h-full bg-black rounded-3xl px-8 py-12 text-white">
           <div>TITULO</div>

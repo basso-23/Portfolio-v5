@@ -2,16 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
+[theme="light"] {
   --color: #525252;
   --background-color: #ffffff;
-  color: var(--color);
-  background-color: var(--background-color);
 }
 
 [theme="dark"] {
   --color: #ededed;
   --background-color: rgb(37, 37, 37);
+}
+
+:root {
   color: var(--color);
   background-color: var(--background-color);
 }
