@@ -1,20 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { useSearchParams } from "next/navigation";
-
 import { useRouter } from "next/router";
 
-const Left_side = () => {
+const Left_side = ({ themeQuery, languageQuery }) => {
   const router = useRouter();
 
-  const [themeQuery, setThemeQuery] = useState();
-  const [languageQuery, setLanguageQuery] = useState();
-
-  useEffect(() => {
-    const { query } = router;
-    setThemeQuery(query.theme);
-    setLanguageQuery(query.language);
-  }, [router]);
-
+  //FUNCTION: ACTUALIZA EL TEMA
   const handleThemeChange = (theme) => {
     router.push({
       pathname: router.pathname,
@@ -22,17 +12,13 @@ const Left_side = () => {
     });
   };
 
+  //FUNCTION: ACTUALIZA EL IDIOMA
   const handleLanguageChange = (language) => {
     router.push({
       pathname: router.pathname,
       query: { ...router.query, language: language },
     });
   };
-
-  useEffect(() => {
-    console.log("THEME QUERY:", themeQuery);
-    console.log("IDIOMA QUERY:", languageQuery);
-  }, [themeQuery, languageQuery]);
 
   return (
     <main>
