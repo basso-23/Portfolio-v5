@@ -6,3 +6,11 @@
   background-color: #ffffff;
   color: #151515;
 }
+
+.pageSize {
+  max-width: 1900px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 10px;
+  padding-right: 10px;
+}

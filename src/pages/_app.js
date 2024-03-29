@@ -1,14 +1,11 @@
 import "@/styles/globals.css";
-import Navbar from "@/components/Navbar";
+import "@fontsource-variable/syne";
 
 const App = ({ Component, pageProps, router }) => {
   return (
-    <>
-      <Navbar />
-      <div className="pt-[80px]">
-        <Component key={router.pathname} {...pageProps} />
-      </div>
-    </>
+    <div style={{ fontFamily: "Syne Variable, sans-serif" }}>
+      <Component key={router.pathname} {...pageProps} />
+    </div>
   );
 };
 
