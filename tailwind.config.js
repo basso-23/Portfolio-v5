@@ -19,10 +19,8 @@ module.exports = {
       // => @media (min-width: 1024px) { ... }
 
       xl: "1280px",
-      // => @media (min-width: 1280px) { ... }
-      "1xl": "1500px",
 
-      "2xl": "1500px",
+      "2xl": "1600px",
       // => @media (min-width: 1536px) { ... }
     },
     extend: {},

@@ -1,6 +1,7 @@
 const es = [
   {
     language: "Español",
+    work: "¡Trabajemos juntos!",
     profile: [
       {
         title1: "Especialización:",
