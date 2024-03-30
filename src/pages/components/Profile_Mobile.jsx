@@ -6,29 +6,26 @@ import Instagram from "@/icons/Instagram";
 import Mail from "@/icons/Mail";
 import Github from "@/icons/Github";
 import LinkedIn from "@/icons/LinkedIn";
-import Profile_Light from "@/icons/Profile_Light";
-import Profile_Dark from "@/icons/Profile_Dark";
+import Profile_Light_Mobile from "@/icons/Profile_Light_Mobile";
+import Profile_Dark_Mobile from "@/icons/Profile_Dark_Mobile";
 
-const Profile = () => {
+const Profile_Mobile = () => {
   const [languageJSON, setLanguageJSON] = useAtom(languageAtom); //* Guarda el contenido de la pagina */
   const [queryValues, setQueryValues] = useAtom(queryOptions); //* Guarda los valores del query de la pagina */
 
   return (
     <main>
       {languageJSON.map((item, index) => (
-        <section
-          key={index}
-          className="2xl:w-[400px] w-[350px] h-[100vh] 2xl:min-h-[900px] min-h-[700px]  max-h-[900px] p-4 fixed lg:flex hidden"
-        >
+        <section key={index} className="w-full p-4 lg:hidden flex">
           {/* //* Contenido */}
-          <div className="relative w-full h-full px-10  2xl:py-12 py-8  profile flex flex-col  justify-between ">
-            <div className="flex items-center gap-5">
+          <div className="relative w-full h-full px-8 2xl:py-12 py-8 profile flex flex-col justify-between gap-10">
+            <div className="flex items-center gap-5 -mb-5">
               {/* //* Logo Visual */}
               <div>
                 {!queryValues.theme || queryValues.theme === "light" ? (
-                  <Profile_Light />
+                  <Profile_Light_Mobile />
                 ) : (
-                  <Profile_Dark />
+                  <Profile_Dark_Mobile />
                 )}
               </div>
 
@@ -88,4 +85,4 @@ const Profile = () => {
   );
 };
 
-export default Profile;
+export default Profile_Mobile;

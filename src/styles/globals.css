@@ -58,6 +58,10 @@
   fill: url(#gradientFill);
 }
 
+.gradient-fill_mobile {
+  fill: url(#gradientFill_mobile);
+}
+
 :root {
   color: var(--primary-text);
   background-color: var(--page-background);
