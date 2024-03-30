@@ -6,6 +6,7 @@ const App = ({}) => {
   return (
     <main className="flex pageSize gap-5 ">
       <Profile />
+
       <Content />
     </main>
   );

@@ -3,18 +3,42 @@
 @tailwind utilities;
 
 [theme="light"] {
-  --color: #525252;
-  --background-color: #ffffff;
+  --page-background: #e6ebf4;
+  --primary-text: #22232c;
+  --secondary-text: #424550;
+  --profile-background: #ebf0f7;
+  --profile-border: #d1d5e0;
+  --socials-border: #b2b4be;
 }
 
 [theme="dark"] {
-  --color: #ededed;
-  --background-color: rgb(37, 37, 37);
+  --page-background: #111111;
+  --primary-text: #e9e9f1;
+  --secondary-text: #c7c6d3;
+  --profile-background: #161616;
+  --profile-border: #303033;
+  --socials-border: #3a3a3d;
+}
+
+.profile {
+  background-color: var(--profile-background);
+  border: 1px solid var(--profile-border);
+  border-radius: 40px;
+}
+
+.secondary-text {
+  color: var(--secondary-text);
+}
+
+.border-socials {
+  border: 1px solid var(--socials-border);
+  padding: 14px;
+  border-radius: 20px;
 }
 
 :root {
-  color: var(--color);
-  background-color: var(--background-color);
+  color: var(--primary-text);
+  background-color: var(--page-background);
 }
 
 .pageSize {
