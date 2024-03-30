@@ -21,7 +21,7 @@ const Profile = () => {
           className="2xl:w-[400px] w-[350px] h-[100vh] 2xl:min-h-[900px] min-h-[700px]  max-h-[900px] p-4 fixed lg:flex hidden"
         >
           {/* //* Contenido */}
-          <div className="relative w-full h-full px-10  2xl:py-12 py-8  profile flex flex-col  justify-between ">
+          <div className="relative w-full h-full px-10 2xl:py-12 py-8  profile flex flex-col  justify-between ">
             <div className="flex items-center gap-5">
               {/* //* Logo Visual */}
               <div>
@@ -38,8 +38,10 @@ const Profile = () => {
                 Baso
               </div>
             </div>
+
             {/* //* Imagen*/}
             <div className="avatar aspect-square w-full rounded-3xl shadow-sm"></div>
+
             {item.profile.map((item, index) => (
               <div key={index} className=" flex flex-col 2xl:gap-10 gap-5 ">
                 {/* //* Specialization*/}
@@ -62,24 +64,45 @@ const Profile = () => {
                 </div>
                 {/* //*Socials*/}
                 <div className=" flex justify-between">
-                  <button className="border-socials">
-                    <Mail />
+                  <button className="button-socials  border-socials">
+                    <span class="label-up-socials">
+                      <Mail />
+                    </span>
+                    <span class="label-up-socials">
+                      <Mail />
+                    </span>
                   </button>
-                  <button className="border-socials">
-                    <Github />
+                  <button className="button-socials  border-socials">
+                    <span class="label-up-socials">
+                      <Github />
+                    </span>
+                    <span class="label-up-socials">
+                      <Github />
+                    </span>
                   </button>
-                  <button className="border-socials">
-                    <LinkedIn />
+                  <button className="button-socials  border-socials">
+                    <span class="label-up-socials">
+                      <LinkedIn />
+                    </span>
+                    <span class="label-up-socials">
+                      <LinkedIn />
+                    </span>
                   </button>
-                  <button className="border-socials">
-                    <Instagram />
+                  <button className="button-socials  border-socials">
+                    <span class="label-up-socials">
+                      <Instagram />
+                    </span>
+                    <span class="label-up-socials">
+                      <Instagram />
+                    </span>
                   </button>
                 </div>
               </div>
             ))}
             {/* //*Work button*/}
-            <button className="font-bold 2xl:text-[20px] text-[16px] rounded-3xl py-[14px] work-button">
-              {item.work}
+            <button className="button font-bold 2xl:text-[20px] text-[16px] rounded-3xl work-button">
+              <span class="label-up"> {item.work}</span>
+              <span class="label-up"> {item.work}</span>
             </button>
           </div>
         </section>

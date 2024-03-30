@@ -15,6 +15,7 @@
     rgba(119, 44, 232, 0.68) 11.5%,
     rgb(119, 44, 232) 91.2%
   );
+  --scrollbar-background: #bdc1c8;
 }
 
 [theme="dark"] {
@@ -31,6 +32,7 @@
     rgb(216, 174, 211) 45.1%,
     rgb(145, 130, 196) 100.2%
   );
+  --scrollbar-background: #000000;
 }
 
 .profile {
@@ -45,7 +47,7 @@
 
 .border-socials {
   border: 1px solid var(--socials-border);
-  padding: 14px;
+
   border-radius: 20px;
 }
 
@@ -80,4 +82,73 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 5px;
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--scrollbar-background);
+  border-radius: 5px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: var(--work-background);
+  border-radius: 4px; /* Bordes redondeados */
+}
+
+.button {
+  display: inline-block;
+  height: 60px;
+  line-height: 60px;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  transition: 0.4s;
+}
+
+.button:hover {
+  transform: scale(1.02);
+}
+
+.label-up {
+  display: block;
+  margin: 0px 30px;
+  height: 100%;
+  position: relative;
+  top: 0%;
+  transition: 0.4s;
+}
+
+.button:hover .label-up {
+  top: -100%;
+}
+
+.button-socials {
+  display: inline-block;
+  height: 50px;
+  line-height: 60px;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  transition: 0.5s;
+}
+
+.button-socials:hover {
+  transform: scale(1.08);
+}
+
+.label-up-socials {
+  display: block;
+  margin: 15px 15px;
+  height: 100%;
+  position: relative;
+  top: 0%;
+  transition: 0.5s;
+}
+
+.button-socials:hover .label-up-socials {
+  top: -130%;
 }

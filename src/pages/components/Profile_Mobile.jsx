@@ -59,24 +59,45 @@ const Profile_Mobile = () => {
                 </div>
                 {/* //*Socials*/}
                 <div className=" flex justify-between">
-                  <button className="border-socials">
-                    <Mail />
+                  <button className="button-socials  border-socials">
+                    <span class="label-up-socials">
+                      <Mail />
+                    </span>
+                    <span class="label-up-socials">
+                      <Mail />
+                    </span>
                   </button>
-                  <button className="border-socials">
-                    <Github />
+                  <button className="button-socials  border-socials">
+                    <span class="label-up-socials">
+                      <Github />
+                    </span>
+                    <span class="label-up-socials">
+                      <Github />
+                    </span>
                   </button>
-                  <button className="border-socials">
-                    <LinkedIn />
+                  <button className="button-socials  border-socials">
+                    <span class="label-up-socials">
+                      <LinkedIn />
+                    </span>
+                    <span class="label-up-socials">
+                      <LinkedIn />
+                    </span>
                   </button>
-                  <button className="border-socials">
-                    <Instagram />
+                  <button className="button-socials  border-socials">
+                    <span class="label-up-socials">
+                      <Instagram />
+                    </span>
+                    <span class="label-up-socials">
+                      <Instagram />
+                    </span>
                   </button>
                 </div>
               </div>
             ))}
             {/* //*Work button*/}
-            <button className="font-bold 2xl:text-[20px] text-[16px] rounded-3xl py-[14px] work-button">
-              {item.work}
+            <button className="button font-bold 2xl:text-[20px] text-[16px] rounded-3xl work-button">
+              <span class="label-up"> {item.work}</span>
+              <span class="label-up"> {item.work}</span>
             </button>
           </div>
         </section>
