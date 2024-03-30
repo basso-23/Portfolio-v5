@@ -8,6 +8,8 @@ import Github from "@/icons/Github";
 import LinkedIn from "@/icons/LinkedIn";
 import Profile_Light_Mobile from "@/icons/Profile_Light_Mobile";
 import Profile_Dark_Mobile from "@/icons/Profile_Dark_Mobile";
+import Button_Socials from "@/lib/Button_Socials";
+import Button from "@/lib/Button";
 
 const Profile_Mobile = () => {
   const [languageJSON, setLanguageJSON] = useAtom(languageAtom); //* Guarda el contenido de la pagina */
@@ -20,7 +22,7 @@ const Profile_Mobile = () => {
           {/* //* Contenido */}
           <div className="relative w-full h-full px-8 2xl:py-12 py-8 profile flex flex-col justify-between gap-10">
             <div className="flex items-center gap-5 -mb-5">
-              {/* //* Logo Visual */}
+              {/* //* Logo Visual Studio */}
               <div>
                 {!queryValues.theme || queryValues.theme === "light" ? (
                   <Profile_Light_Mobile />
@@ -59,46 +61,15 @@ const Profile_Mobile = () => {
                 </div>
                 {/* //*Socials*/}
                 <div className=" flex justify-between">
-                  <button className="button-socials  border-socials">
-                    <span class="label-up-socials">
-                      <Mail />
-                    </span>
-                    <span class="label-up-socials">
-                      <Mail />
-                    </span>
-                  </button>
-                  <button className="button-socials  border-socials">
-                    <span class="label-up-socials">
-                      <Github />
-                    </span>
-                    <span class="label-up-socials">
-                      <Github />
-                    </span>
-                  </button>
-                  <button className="button-socials  border-socials">
-                    <span class="label-up-socials">
-                      <LinkedIn />
-                    </span>
-                    <span class="label-up-socials">
-                      <LinkedIn />
-                    </span>
-                  </button>
-                  <button className="button-socials  border-socials">
-                    <span class="label-up-socials">
-                      <Instagram />
-                    </span>
-                    <span class="label-up-socials">
-                      <Instagram />
-                    </span>
-                  </button>
+                  <Button_Socials icon={<Mail />} />
+                  <Button_Socials icon={<Github />} />
+                  <Button_Socials icon={<LinkedIn />} />
+                  <Button_Socials icon={<Instagram />} />
                 </div>
               </div>
             ))}
             {/* //*Work button*/}
-            <button className="button font-bold 2xl:text-[20px] text-[16px] rounded-3xl work-button">
-              <span class="label-up"> {item.work}</span>
-              <span class="label-up"> {item.work}</span>
-            </button>
+            <Button text={item.work} />
           </div>
         </section>
       ))}

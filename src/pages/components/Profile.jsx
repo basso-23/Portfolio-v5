@@ -8,6 +8,8 @@ import Github from "@/icons/Github";
 import LinkedIn from "@/icons/LinkedIn";
 import Profile_Light from "@/icons/Profile_Light";
 import Profile_Dark from "@/icons/Profile_Dark";
+import Button from "@/lib/Button";
+import Button_Socials from "@/lib/Button_Socials";
 
 const Profile = () => {
   const [languageJSON, setLanguageJSON] = useAtom(languageAtom); //* Guarda el contenido de la pagina */
@@ -23,7 +25,7 @@ const Profile = () => {
           {/* //* Contenido */}
           <div className="relative w-full h-full px-10 2xl:py-12 py-8  profile flex flex-col  justify-between ">
             <div className="flex items-center gap-5">
-              {/* //* Logo Visual */}
+              {/* //* Logo Visual Studio */}
               <div>
                 {!queryValues.theme || queryValues.theme === "light" ? (
                   <Profile_Light />
@@ -38,10 +40,8 @@ const Profile = () => {
                 Baso
               </div>
             </div>
-
             {/* //* Imagen*/}
             <div className="avatar aspect-square w-full rounded-3xl shadow-sm"></div>
-
             {item.profile.map((item, index) => (
               <div key={index} className=" flex flex-col 2xl:gap-10 gap-5 ">
                 {/* //* Specialization*/}
@@ -64,46 +64,15 @@ const Profile = () => {
                 </div>
                 {/* //*Socials*/}
                 <div className=" flex justify-between">
-                  <button className="button-socials  border-socials">
-                    <span class="label-up-socials">
-                      <Mail />
-                    </span>
-                    <span class="label-up-socials">
-                      <Mail />
-                    </span>
-                  </button>
-                  <button className="button-socials  border-socials">
-                    <span class="label-up-socials">
-                      <Github />
-                    </span>
-                    <span class="label-up-socials">
-                      <Github />
-                    </span>
-                  </button>
-                  <button className="button-socials  border-socials">
-                    <span class="label-up-socials">
-                      <LinkedIn />
-                    </span>
-                    <span class="label-up-socials">
-                      <LinkedIn />
-                    </span>
-                  </button>
-                  <button className="button-socials  border-socials">
-                    <span class="label-up-socials">
-                      <Instagram />
-                    </span>
-                    <span class="label-up-socials">
-                      <Instagram />
-                    </span>
-                  </button>
+                  <Button_Socials icon={<Mail />} />
+                  <Button_Socials icon={<Github />} />
+                  <Button_Socials icon={<LinkedIn />} />
+                  <Button_Socials icon={<Instagram />} />
                 </div>
               </div>
             ))}
             {/* //*Work button*/}
-            <button className="button font-bold 2xl:text-[20px] text-[16px] rounded-3xl work-button">
-              <span class="label-up"> {item.work}</span>
-              <span class="label-up"> {item.work}</span>
-            </button>
+            <Button text={item.work} />
           </div>
         </section>
       ))}
