@@ -16,6 +16,8 @@
     rgb(119, 44, 232) 91.2%
   );
   --scrollbar-background: #bdc1c8;
+  --active: #22232c;
+  --inactive: #8b8a91;
 }
 
 [theme="dark"] {
@@ -33,6 +35,8 @@
     rgb(145, 130, 196) 100.2%
   );
   --scrollbar-background: #000000;
+  --active: #ffffff;
+  --inactive: #525156;
 }
 
 .profile {
@@ -115,7 +119,7 @@
 
 .label-up {
   display: block;
-  margin: 0px 0px;
+  margin: 0px 30px;
   height: 100%;
   position: relative;
   top: 0%;
@@ -239,4 +243,65 @@
   left: auto;
   right: 15%;
   animation-delay: 0s;
+}
+
+.navbar-left {
+  width: 100%;
+  background-color: transparent;
+  display: flex;
+  justify-content: flex-start;
+  position: absolute;
+}
+
+.left-content {
+  position: fixed;
+  z-index: 50;
+}
+
+.navbar-right {
+  width: 100%;
+  background-color: transparent;
+  display: flex;
+  justify-content: flex-end;
+  position: absolute;
+}
+
+.right-content {
+  position: fixed;
+  z-index: 50;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0);
+  border-radius: 16px;
+
+  backdrop-filter: blur(7.7px);
+  -webkit-backdrop-filter: blur(7.7px);
+}
+
+.active-section {
+  color: var(--active) !important;
+  border: 1px solid var(--socials-border) !important;
+}
+
+.button-nav {
+  display: inline-block;
+  height: 50px;
+  line-height: 60px;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  transition: 0s;
+  cursor: pointer;
+  color: var(--inactive);
+  border: 1px solid transparent;
+}
+
+.label-nav {
+  display: block;
+  margin: 15px 15px;
+  height: 100%;
+  position: relative;
+  top: 0%;
+  transition: 0s;
 }

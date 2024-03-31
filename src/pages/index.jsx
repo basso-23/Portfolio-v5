@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from "react";
-import Content from "./components/Content";
-import Profile from "./components/Profile";
-import Profile_Mobile from "./components/Profile_Mobile";
 import { motion as m, AnimatePresence } from "framer-motion";
 import Loader from "@/lib/Loader";
+import Profile from "@/components/Profile";
+import Profile_Mobile from "@/components/Profile_Mobile";
+import Content from "@/components/Content";
 
 const App = () => {
   const [loading, setLoading] = useState(true);
 
+  // FUNCTION: Tiempo de cargad de la pagina
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
@@ -16,6 +17,7 @@ const App = () => {
 
   return (
     <main>
+      {/* //* Loader*/}
       <AnimatePresence>
         {false ? (
           <m.div
@@ -34,10 +36,10 @@ const App = () => {
         ) : null}
       </AnimatePresence>
 
+      {/* //* Contenido*/}
       {true ? (
         <section className="lg:flex lg:flex-row flex flex-col pageSize lg:gap-5 gap-0">
           <Profile />
-          <Profile_Mobile />
           <Content />
         </section>
       ) : null}

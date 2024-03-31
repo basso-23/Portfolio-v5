@@ -1,7 +1,8 @@
 const en = [
   {
-    language: "English",
+    language: "EN",
     work: "Let's Work Together!",
+    talk: "Let's Talk",
     profile: [
       {
         title1: "Specialization:",
