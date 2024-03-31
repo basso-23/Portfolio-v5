@@ -4,14 +4,32 @@ import Chat from "@/icons/Chat";
 const Button_Talk = ({ text }) => {
   return (
     <>
-      <button className="button font-bold 2xl:text-[20px] text-[16px] rounded-3xl work-button">
-        <span className="label-up">
+      <button
+        style={{
+          height: "50px",
+          lineHeight: "50px",
+        }}
+        className="button font-bold text-[16px] rounded-3xl work-button"
+      >
+        <span
+          style={{
+            marginLeft: "30px",
+            marginRight: "30px",
+          }}
+          className="label-up"
+        >
           <div className="flex items-center">
             <div>{text}</div> <span style={{ color: "transparent" }}>i</span>
             <Chat />
           </div>
         </span>
-        <span className="label-up ">
+        <span
+          style={{
+            marginLeft: "30px",
+            marginRight: "30px",
+          }}
+          className="label-up "
+        >
           <div className="flex items-center">
             <div>{text}</div> <span style={{ color: "transparent" }}>i</span>
             <Chat />
