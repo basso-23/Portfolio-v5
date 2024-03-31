@@ -8,6 +8,7 @@ const Button_Talk = ({ text }) => {
         style={{
           height: "50px",
           lineHeight: "50px",
+          borderRadius: "20px",
         }}
         className="button font-bold text-[16px] rounded-3xl work-button"
       >

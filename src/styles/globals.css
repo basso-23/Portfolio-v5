@@ -283,6 +283,15 @@
   border: 1px solid var(--socials-border) !important;
 }
 
+.active-section-mobile {
+  color: var(--profile-background) !important;
+  background-color: var(--primary-text) !important;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
 .button-nav {
   display: inline-block;
   height: 50px;
