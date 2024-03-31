@@ -8,18 +8,10 @@ const Content = () => {
       <Navbar />
       <Profile_Mobile />
       <section className="p-4 flex flex-col">
-        <div name="home" className="  h-96  ">
-          home
-        </div>
-        <div name="projects" className="  h-96   ">
-          projects
-        </div>
-        <div name="about" className="  h-96   ">
-          about
-        </div>
-        <div name="resume" className=" h-96  ">
-          resume
-        </div>
+        <div name="home" className="h-96"></div>
+        <div name="projects" className="h-96"></div>
+        <div name="about" className="h-96"></div>
+        <div name="resume" className="h-96"></div>
         <div className=" min-h-screen">footer</div>
       </section>
     </main>

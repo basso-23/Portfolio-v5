@@ -12,7 +12,7 @@
   --work-text: #ebf0f7;
   --work-background: linear-gradient(
     109.6deg,
-    rgba(119, 44, 232) 11.5%,
+    rgba(119, 44, 232, 0.68) 11.5%,
     rgb(119, 44, 232) 91.2%
   );
   --scrollbar-background: #bdc1c8;
@@ -285,7 +285,7 @@
 
 .active-section-mobile {
   color: var(--profile-background) !important;
-  background-color: var(--primary-text) !important;
+  background: var(--work-background) !important;
 }
 
 .pointer {

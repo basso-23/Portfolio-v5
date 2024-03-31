@@ -10,6 +10,10 @@ import { useRouter } from "next/router";
 import { handleLanguageChange, handleThemeChange } from "@/lib/routerUtils";
 import Sun from "@/icons/Sun";
 import Button_Nav_Mobile from "@/lib/Button_Nav_Mobile";
+import Home from "@/icons/Home";
+import Projects from "@/icons/projects";
+import About from "@/icons/About";
+import Resume from "@/icons/Resume";
 
 const Navbar = () => {
   const [languageJSON, setLanguageJSON] = useAtom(languageAtom); //* Guarda el contenido de la pagina */
@@ -22,10 +26,10 @@ const Navbar = () => {
         <section key={index} className="mt-4  w-full relative">
           <div className="navbar-left mt-[6px]">
             <div className="left-content lg:flex hidden gap-4">
-              <Button_Nav to={"home"} icon={<Github />} />
-              <Button_Nav to={"projects"} icon={<Github />} />
-              <Button_Nav to={"about"} icon={<Github />} />
-              <Button_Nav to={"resume"} icon={<Github />} />
+              <Button_Nav to={"home"} icon={<Home />} />
+              <Button_Nav to={"projects"} icon={<Projects />} />
+              <Button_Nav to={"about"} icon={<About />} />
+              <Button_Nav to={"resume"} icon={<Resume />} />
             </div>
           </div>
           <div className="navbar-right mt-[4px]">
@@ -79,10 +83,10 @@ const Navbar = () => {
             </div>
           </div>
           <div className=" lg:hidden flex gap-4 fixed bottom-4 overflow-x-auto z-50 w-fit sm:max-w-[800px] max-w-[325px] min-w-[325px] fixedCenterX pb-2 sm:pb-0  justify-center">
-            <Button_Nav_Mobile to={"home"} icon={<Github />} />
-            <Button_Nav_Mobile to={"projects"} icon={<Github />} />
-            <Button_Nav_Mobile to={"about"} icon={<Github />} />
-            <Button_Nav_Mobile to={"resume"} icon={<Github />} />
+            <Button_Nav_Mobile to={"home"} icon={<Home />} />
+            <Button_Nav_Mobile to={"projects"} icon={<Projects />} />
+            <Button_Nav_Mobile to={"about"} icon={<About />} />
+            <Button_Nav_Mobile to={"resume"} icon={<Resume />} />
             <div
               onClick={() =>
                 handleLanguageChange(
@@ -92,9 +96,9 @@ const Navbar = () => {
                     : "ES"
                 )
               }
-              className=" w-14 aspect-square flex glass select-none pointer active-section-mobile"
+              className=" w-14 aspect-square flex glass active-section-mobile"
             >
-              <div className=" font-semibold m-auto select-none">
+              <div className=" font-semibold m-auto pointer-events-none ">
                 {!queryValues.language || queryValues.language === "ES" ? (
                   <div>EN</div>
                 ) : (

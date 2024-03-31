@@ -18,9 +18,9 @@ const Profile_Mobile = () => {
   return (
     <main>
       {languageJSON.map((item, index) => (
-        <section key={index} className="w-full p-4 lg:hidden flex">
+        <section key={index} className="w-full p-2 lg:hidden flex">
           {/* //* Contenido */}
-          <div className="relative w-full h-full px-8 2xl:py-12 py-8 profile flex flex-col justify-between gap-10">
+          <div className="relative w-full h-full px-6 2xl:py-12 py-8 profile flex flex-col justify-between gap-10">
             <div className="flex items-center gap-5 -mb-5">
               {/* //* Logo Visual Studio */}
               <div>
