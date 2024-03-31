@@ -8,8 +8,8 @@ import Github from "@/icons/Github";
 import LinkedIn from "@/icons/LinkedIn";
 import Profile_Light_Mobile from "@/icons/Profile_Light_Mobile";
 import Profile_Dark_Mobile from "@/icons/Profile_Dark_Mobile";
-import Button_Socials from "@/lib/Button_Socials";
 import Button from "@/lib/Button";
+import Button_Socials from "@/lib/Button_Socials";
 
 const Profile_Mobile = () => {
   const [languageJSON, setLanguageJSON] = useAtom(languageAtom); //* Guarda el contenido de la pagina */
@@ -61,10 +61,22 @@ const Profile_Mobile = () => {
                 </div>
                 {/* //*Socials*/}
                 <div className=" flex justify-between">
-                  <Button_Socials icon={<Mail />} />
-                  <Button_Socials icon={<Github />} />
-                  <Button_Socials icon={<LinkedIn />} />
-                  <Button_Socials icon={<Instagram />} />
+                  <Button_Socials
+                    icon={<Mail />}
+                    url={"https://www.carlosbaso.com/"}
+                  />
+                  <Button_Socials
+                    icon={<Github />}
+                    url={"https://www.carlosbaso.com/"}
+                  />
+                  <Button_Socials
+                    icon={<LinkedIn />}
+                    url={"https://www.carlosbaso.com/"}
+                  />
+                  <Button_Socials
+                    icon={<Instagram />}
+                    url={"https://www.carlosbaso.com/"}
+                  />
                 </div>
               </div>
             ))}

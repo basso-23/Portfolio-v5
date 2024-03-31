@@ -64,10 +64,22 @@ const Profile = () => {
                 </div>
                 {/* //*Socials*/}
                 <div className=" flex justify-between">
-                  <Button_Socials icon={<Mail />} />
-                  <Button_Socials icon={<Github />} />
-                  <Button_Socials icon={<LinkedIn />} />
-                  <Button_Socials icon={<Instagram />} />
+                  <Button_Socials
+                    icon={<Mail />}
+                    url={"https://www.carlosbaso.com/"}
+                  />
+                  <Button_Socials
+                    icon={<Github />}
+                    url={"https://www.carlosbaso.com/"}
+                  />
+                  <Button_Socials
+                    icon={<LinkedIn />}
+                    url={"https://www.carlosbaso.com/"}
+                  />
+                  <Button_Socials
+                    icon={<Instagram />}
+                    url={"https://www.carlosbaso.com/"}
+                  />
                 </div>
               </div>
             ))}
