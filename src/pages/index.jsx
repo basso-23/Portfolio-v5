@@ -17,7 +17,7 @@ const App = () => {
   return (
     <main>
       <AnimatePresence>
-        {loading ? (
+        {false ? (
           <m.div
             initial={{ opacity: 1 }}
             transition={{
@@ -33,11 +33,14 @@ const App = () => {
           </m.div>
         ) : null}
       </AnimatePresence>
-      <section className="lg:flex lg:flex-row flex flex-col pageSize lg:gap-5 gap-0">
-        <Profile />
-        <Profile_Mobile />
-        <Content />
-      </section>
+
+      {true ? (
+        <section className="lg:flex lg:flex-row flex flex-col pageSize lg:gap-5 gap-0">
+          <Profile />
+          <Profile_Mobile />
+          <Content />
+        </section>
+      ) : null}
     </main>
   );
 };
